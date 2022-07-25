@@ -19,6 +19,10 @@ consuming code closes and establishes a new connecition.
 You can run this code using the two requirements.txt - just connecting to slack
 and waiting a time will cause this error to happen with the mainline lib.
 
+As to why this happens so quickly - I'm guessing there might be other errors in
+the fetch function that are causing protocol errors on the server and the
+server to prematurely close the connection - worth investigating further.
+
   $ SLACK_BOT_TOKEN=... ./slack-bot.py
 
 Tested on Python 3.10.4, Ubuntu 22.04 x86_64
